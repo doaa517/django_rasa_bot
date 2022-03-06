@@ -504,3 +504,4 @@ stories:
   steps:
   - intent: degree
   - action: query_degree
+

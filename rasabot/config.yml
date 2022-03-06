@@ -19,12 +19,6 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
-<<<<<<< HEAD
- # - name: FallbackClassifier
-  #  threshold: 0.3
-   # ambiguity_threshold: 0.1
-=======
->>>>>>> 8ba4f5be886b5d02c0a2d193d8109b8daf50f877
 
 policies:
 
@@ -39,8 +33,6 @@ policies:
     batch_size: 25
     max_training_samples: 1000
     constrain_similarities: true
-
-
 
 # Configuration for Rasa Core.
 

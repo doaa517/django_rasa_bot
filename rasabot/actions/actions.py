@@ -186,7 +186,6 @@ class DbQueryingMethods:
 
 
 
-
 class ActionGreet(Action):
     def name(self):
         return "action_save_name"

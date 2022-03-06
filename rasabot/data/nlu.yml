@@ -1041,7 +1041,6 @@ nlu:
 
 
 
-
 - intent: degree
   examples: |
   - What is my degree in [programming] (course_name)
