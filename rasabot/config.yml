@@ -3,7 +3,9 @@ recipe: default.v1
 language: en
 
 pipeline:
-
+# # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
+# # If you'd like to customize it, uncomment and adjust the pipeline.
+# # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -20,45 +22,19 @@ pipeline:
     epochs: 100
     constrain_similarities: true
 
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
 policies:
 
   - name: MemoizationPolicy
+  - name: AugmentedMemoizationPolicy
   - name: RulePolicy
     max_history: 5
     epochs: 100
   - name: TEDPolicy
-<<<<<<< HEAD
     max_history: 8
     epochs: 200
     batch_size: 25
     max_training_samples: 1000
     constrain_similarities: true
-
-# Configuration for Rasa Core.
-
-# policies:
-#   - name: RulePolicy
-#   - name: TEDPolicy
-#     max_history: 5
-#     epochs: 200
-#     batch_size: 50
-#     max_training_samples: 300
-
-    # core_fallback_threshold: 0.3
-    # core_fallback_action_name: "action_default_fallback"
-    # enable_fallback_prediction: true
-    # restrict_rules: true
-   # check_for_contradiction: true
-  # - name: MemoizationPolicy
-  # - name: KerasPolicy
-  # - name: MappingPolicy
-  # # Other policies
- # - name: FallbackPolicy  
-  #  core_fallback_action_name: "action_default_fallback"
-=======
-    max_history: 5
-    epochs: 200
-    batch_size: 50
-    max_training_samples: 300
-    constrain_similarities: true
->>>>>>> 8ba4f5be886b5d02c0a2d193d8109b8daf50f877
