@@ -1,9 +1,5 @@
-# The config recipe.
-# https://rasa.com/docs/rasa/model-configuration/
-recipe: default.v1
-
 # Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
+recipe: default.v1
 language: en
 
 pipeline:
@@ -25,9 +21,9 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
     constrain_similarities: true
-  - name: FallbackClassifier
-    threshold: 0.3
-    ambiguity_threshold: 0.1
+ # - name: FallbackClassifier
+  #  threshold: 0.3
+   # ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -41,6 +37,32 @@ policies:
     max_history: 5
     epochs: 100
   - name: TEDPolicy
-    max_history: 5
-    epochs: 100
+    max_history: 8
+    epochs: 200
+    batch_size: 25
+    max_training_samples: 1000
     constrain_similarities: true
+
+
+
+# Configuration for Rasa Core.
+
+# policies:
+#   - name: RulePolicy
+#   - name: TEDPolicy
+#     max_history: 5
+#     epochs: 200
+#     batch_size: 50
+#     max_training_samples: 300
+
+    # core_fallback_threshold: 0.3
+    # core_fallback_action_name: "action_default_fallback"
+    # enable_fallback_prediction: true
+    # restrict_rules: true
+   # check_for_contradiction: true
+  # - name: MemoizationPolicy
+  # - name: KerasPolicy
+  # - name: MappingPolicy
+  # # Other policies
+ # - name: FallbackPolicy  
+  #  core_fallback_action_name: "action_default_fallback"
