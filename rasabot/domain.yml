@@ -368,7 +368,6 @@ responses:
       \ Latakia: 2566411-041 / 2593412-041"
 
 
-
 actions:
 - action_save_name
 - query_degree

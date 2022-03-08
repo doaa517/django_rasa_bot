@@ -481,7 +481,6 @@ stories:
   - intent: diploma
   - action: utter_diploma
 
-
 - story: masters 
   steps:
   - intent: masters
